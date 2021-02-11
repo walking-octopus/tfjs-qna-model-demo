@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI QNA Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.8.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="Description"
+      content="A simple web app made to show how easy TensorflowJS could be to implement."
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3 style="padding-top: 0.3em;">Demo</h3>
+      <p>
+        This is a simple web app made to show how easy TensorflowJS could be to
+        implement. Enter your question and then text where we will search for
+        it. <i>(All of your data is processed on-device)</i>
+      </p>
+
+      <div class="row">
+        <div class="four columns">
+          <label for="questionbox">Your question</label>
+          <input
+            class="u-full-width"
+            type="text"
+            placeholder="What is cat?"
+            id="questionbox"
+          />
+        </div>
+
+        <div class="eight columns">
+          <label for="exampleEmailInput">Your paragraph</label>
+          <input
+            class="u-full-width"
+            type="text"
+            placeholder="The cat (Felis catus) is a domestic species of small mammal..."
+            id="passagebox"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="five columns">
+          <input type="submit" value="Process" onclick="Analize();" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+          <label for="awnserbox"
+            >Answers
+            <span id="isloading" style="visibility: hidden;"> ...</span></label
+          >
+          <ul id="awnserbox">
+            <li id="awn_1">
+              The cat is a domestic species of small mammal... <i>score: 95</i>
+            </li>
+            <li id="awn_2">The cat is a small mammal... <i>score: 70</i></li>
+            <li id="awn_3">The cat is a mammal... <i>score: 40</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
